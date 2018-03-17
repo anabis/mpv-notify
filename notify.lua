@@ -87,7 +87,7 @@ end
 -- scale an image file
 -- @return boolean of success
 function scale_image(src, dst)
-	local convert_cmd = ("convert -scale x64 -- %s %s"):format(
+	local convert_cmd = ("convert -scale x64 %s %s"):format(
 		string.shellescape(src), string.shellescape(dst))
 	print_debug("executing " .. convert_cmd)
 	if os.execute(convert_cmd) then
